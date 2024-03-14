@@ -1,0 +1,3 @@
+[submodule "resources/reactjs"]
+	path = resources/reactjs
+	url = https://github.com/YroDevGit/SellFishNew.git
