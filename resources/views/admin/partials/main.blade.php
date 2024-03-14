@@ -663,4 +663,4 @@
 
 
 @viteReactRefresh
-@vite('resources\reactjs\src\index.jsx');
+@vite('reactjs\src\index.jsx');
