@@ -23,6 +23,7 @@ const searchNow = async(searchQuery) =>{
         throw new Error('Network response was not ok');
       }
       const data = await response.json();
+      console.log(data);
       setResults(data);
     } catch (error) {
       console.error('Error fetching search results:', error);
