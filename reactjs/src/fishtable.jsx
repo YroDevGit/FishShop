@@ -46,7 +46,7 @@ const FishTable = () =>{
             </thead>
             <tbody className="table-border-bottom-0">
               {data.map((column)=>
-                <tr>
+                <tr className="zoom-row">
                 <td><i className="fab fa-angular fa-lg text-danger me-3"></i> <strong>{column.fish_name}</strong></td>
                 <td>{column.fish_color}</td>
                 <td>
@@ -56,9 +56,9 @@ const FishTable = () =>{
                       data-popup="tooltip-custom"
                       data-bs-placement="top"
                       className="avatar avatar-xs pull-up"
-                      title="Lilian Fuller"
+                      title={column.fish_name}
                     >
-                      <img src={"/storage/uploads/"+column.fish_image} alt="Avatar" className="rounded-circle" ></img>
+                      <img src={"/storage/uploads/"+column.fish_image} alt="Avatar" className="rounded-circle image-zoom" ></img>
                     </li>
                    
                    
