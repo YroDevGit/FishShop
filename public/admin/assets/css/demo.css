@@ -80,6 +80,7 @@
 [dir='rtl'] .rtl-only {
   display: block !important;
 }
+#fishTable{height: 650px;max-height: 650px; overflow-y: scroll;}
 
 /*
 * Layout demo

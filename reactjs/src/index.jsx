@@ -10,6 +10,7 @@ import {FooterSection} from './footer';
 import {CartIcon} from './BEcomponents';
 import {PageHeader} from './header';
 import {CartModule} from "./cart";
+import {FishTable} from "./fishtable";
 
 try {
   ReactDOM.render(
@@ -83,6 +84,15 @@ try {
   ReactDOM.render(
     <CartModule />,
     document.getElementById('cart')
+  )
+} catch (error) {
+  
+}
+
+try {
+  ReactDOM.render(
+    <FishTable/>,
+    document.getElementById('fishTable')
   )
 } catch (error) {
   

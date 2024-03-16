@@ -18,3 +18,4 @@ Route::get("/api/showCartAll", [cartcontroll::class,"showCartAll"]);
 Route::get("/api/getMaxQty",[cartcontroll::class,"getProductOnCart"]);
 
 Route::get("/api/datatable", [datacontroll::class,"getDataTable"]);
+Route::get("/api/displayFish", [fishcontroll::class,"displayFish"]);

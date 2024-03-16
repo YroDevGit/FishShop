@@ -37,7 +37,8 @@ class fishcontroll extends Controller
             "description" => $req->input("description"),
             "date_added" => now(),
             "stat" => "0",
-            "fish_image" => $newfile
+            "fish_image" => $newfile,
+            "shop_id" => session("userID")
         ]);
         return back()->with("success","success");
     }
@@ -46,6 +47,18 @@ class fishcontroll extends Controller
         $val = "%".$req->input("q")."%"; 
         $col = "%".$req->input("c")."%";  
         $ret = fish::where("fish_code", "like", $val)->orWhere("fish_name", "like", $val)->where("fish_color", "like", $col)->take(7)->get();
+        return response()->json($ret);
+    }
+
+    function displayFish(Request $req){
+        $val = $req->input("q");
+        $value = "%".$val."%";
+        $user = session("userID");
+        $ret = fish::where([
+            ["stat", "=","0"],
+            ["shop_id", "=", $user],
+            ["fish_name","like",$value]
+        ])->get();
         return response()->json($ret);
     }
 }
