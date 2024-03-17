@@ -18,11 +18,11 @@ class cartcontroll extends Controller
             "qty" => "integer|min:1|max:".$req->input('maximum')
         ]);
     
-        // If validation fails, return the error messages in JSON format
+      
         if ($validator->fails()) {
             return response()->json([
                 'error' => $validator->errors()->toArray()
-            ], 422); // 422 is the HTTP status code for Unprocessable Entity
+            ], 422); 
         }
 
         $user = $req->input('id');
