@@ -11,6 +11,7 @@ import {CartIcon} from './BEcomponents';
 import {PageHeader} from './header';
 import {CartModule} from "./cart";
 import {FishTable} from "./fishtable";
+import {Countries} from './countries';
 
 try {
   ReactDOM.render(
@@ -93,6 +94,16 @@ try {
   ReactDOM.render(
     <FishTable/>,
     document.getElementById('fishTable')
+  )
+} catch (error) {
+  
+}
+
+
+try {
+  ReactDOM.render(
+    <Countries />,
+    document.getElementById('countries')
   )
 } catch (error) {
   
