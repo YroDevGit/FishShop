@@ -37,9 +37,9 @@
 </div>
 <!-- Hero End -->
 
-<!-- Fruits Shop Start-->
+<!--  Shop Start-->
 <div id="fishShop"></div>
-<!-- Fruits Shop End-->
+<!--  Shop End-->
 
 <!-- Featurs Section Start -->
 <div id="features"></div>
@@ -83,12 +83,11 @@
     <div class="container py-5">
         <h1 class="mb-0">Popular fish all over the world</h1>
         <div id="globalFish">
-            
-            
         </div>
     </div>
 </div>
 <!-- Vesitable Shop End -->
+
 
 
 <!-- Fact Start -->

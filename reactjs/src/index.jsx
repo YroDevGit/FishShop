@@ -13,6 +13,7 @@ import {CartModule} from "./cart";
 import {FishTable} from "./fishtable";
 import {Countries} from './countries';
 import {GlobalFish} from "./displayfish";
+import { Products } from './products';
 
 try {
   ReactDOM.render(
@@ -105,6 +106,16 @@ try {
   ReactDOM.render(
     <GlobalFish />,
     document.getElementById('globalFish')
+  )
+} catch (error) {
+  
+}
+
+
+try {
+  ReactDOM.render(
+    <Products />,
+    document.getElementById('test')
   )
 } catch (error) {
   
