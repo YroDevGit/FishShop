@@ -12,6 +12,7 @@ import {PageHeader} from './header';
 import {CartModule} from "./cart";
 import {FishTable} from "./fishtable";
 import {Countries} from './countries';
+import {GlobalFish} from "./displayfish";
 
 try {
   ReactDOM.render(
@@ -102,8 +103,8 @@ try {
 
 try {
   ReactDOM.render(
-    <Countries />,
-    document.getElementById('countries')
+    <GlobalFish />,
+    document.getElementById('globalFish')
   )
 } catch (error) {
   
