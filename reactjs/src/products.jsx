@@ -2,18 +2,13 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
 const Products = () => {
-    // State to store fetched products
+
     const [products, setProducts] = useState([]);
-
-    // Replace these values with your actual Storefront API access token and shop name
     const ACCESS_TOKEN = '14909cb6a577fc9797feff77bc5d2296';
-    const SHOP_NAME = 'your_shop_name';
-
+    
     useEffect(() => {
-        // Construct the URL for fetching products
+ 
         const productsUrl = `https://adb0fe-0d.myshopify.com/api/2021-10/graphql`;
-
-        // GraphQL query to fetch products
         const graphqlQuery = `
             {
                 products(first: 10) {
@@ -36,7 +31,7 @@ const Products = () => {
             }
         `;
 
-        // Make the POST request with the access token to fetch products
+     
         axios.post(productsUrl, {
             query: graphqlQuery
         }, {
@@ -45,12 +40,8 @@ const Products = () => {
             },
         })
         .then(productsResponse => {
-            // Check if the request was successful
             if (productsResponse.status === 200) {
-                // Parse the JSON response
                 const productsData = productsResponse.data.data.products.edges;
-
-                // Update the state with fetched products
                 setProducts(productsData);
             } else {
                 console.error(`Error fetching products: ${productsResponse.status}`);
@@ -59,7 +50,7 @@ const Products = () => {
         .catch(error => {
             console.error('Error fetching products:', error);
         });
-    }, []); // Empty dependency array to run effect only once
+    }, []); 
 
     console.log(products);
     return (
