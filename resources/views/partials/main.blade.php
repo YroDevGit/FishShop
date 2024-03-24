@@ -125,9 +125,13 @@
 
     <!-- Template Javascript -->
     <script src="{{asset('template/js/main.js')}}"></script>
+    <div id="loaddom"></div>
     </body>
 
 </html>
+
+
+
 
 
 @viteReactRefresh

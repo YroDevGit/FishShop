@@ -9,6 +9,7 @@ function FishModule({title}){
   const [results, setResults] = useState([]);
   const [fish, setFish] = useState("");
   const [color, setColor] = useState(""); 
+  const [stat, setstat] =  useState("0");
 
   useEffect(() => {
     searchNow("");
@@ -17,6 +18,7 @@ function FishModule({title}){
 
 const searchNow = async(searchQuery) =>{
     setQuery(searchQuery);
+    setstat("0");
     try {
       const response = await fetch(`/api/showFish?${searchQuery}`); 
       if (!response.ok) {
@@ -25,9 +27,11 @@ const searchNow = async(searchQuery) =>{
       const data = await response.json();
       console.log(data);
       setResults(data);
+      
     } catch (error) {
       console.error('Error fetching search results:', error);
     }
+    setstat("1");
   }
 
   const handleSearch = (event) => {
@@ -71,12 +75,12 @@ const searchNow = async(searchQuery) =>{
                     <div className="row g-4">
                         <div className="col-lg-12">
                             <div className="row g-4">
-                                
-                               {results.length > 0 && results.map((col)=>
+                               {stat=="0" && <div>loading</div>}
+                               {results.length > 0 && stat == "1" && results.map((col)=>
                                <FishCard fishid={col.fish_code} title={col.fish_name} description={col.description} image={"/storage/uploads/"+col.fish_image} price={col.price} maxItems={col.quantity}/>
                                )}
                                {
-                                results.length < 1 && <div>No fish found related on search.!</div>
+                                results.length < 1 && stat == "1" && <div>No fish found</div>
                                }
                             </div>
                         </div>

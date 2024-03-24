@@ -14,6 +14,7 @@ import {FishTable} from "./fishtable";
 import {Countries} from './countries';
 import {GlobalFish} from "./displayfish";
 import { Products } from './products';
+import { LoadDom } from './loaddom';
 
 try {
   ReactDOM.render(
@@ -116,6 +117,15 @@ try {
   ReactDOM.render(
     <Products />,
     document.getElementById('test')
+  )
+} catch (error) {
+  
+}
+
+try {
+  ReactDOM.render(
+    <LoadDom/>,
+    document.getElementById('loaddom')
   )
 } catch (error) {
   
